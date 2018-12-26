@@ -1,12 +1,15 @@
-import React, { Component } from 'react';
-
+import React, { Component } from "react";
+import { Button, Grid, Row, Col } from "react-bootstrap";
+import  NavBar from '../../featyres/navigation/navBar/navBar'
 class App extends Component {
   render() {
-    return (
-      <div>
-        <h1>Re-vents</h1>
-      </div>
-    );
+    return <Grid fluid className ='header'>
+      <Row className ='NavHead'  >
+        
+            <NavBar />
+         
+        </Row>
+      </Grid>;
   }
 }
 

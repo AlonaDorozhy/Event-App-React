@@ -3,3 +3,29 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+.NavHead{
+  background: url(img/confetti.png) #B6D7FF;
+  color: #ffffff;
+
+  height: 130px;
+}
+.navbarLogo{
+  height: 120px;
+
+}
+.navLink{
+  color: #ffffff;
+  font-size: 25px;
+  margin-right: 18px;
+
+}
+.navLink:hover {
+  color: #FFB907;
+  font-size: 25px;
+  text-decoration: none;
+
+}
+
+.btnLink{
+  background-color:#28A745;
+}
