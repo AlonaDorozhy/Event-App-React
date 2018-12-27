@@ -3,29 +3,61 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
-.NavHead{
-  background: url(img/confetti.png) #B6D7FF;
+.NavHead {
+  background: url(img/confetti.png) #b6d7ff;
   color: #ffffff;
 
   height: 130px;
 }
-.navbarLogo{
+.navbarLogo {
   height: 120px;
-
 }
-.navLink{
+.navLink {
   color: #ffffff;
   font-size: 25px;
   margin-right: 18px;
-
 }
 .navLink:hover {
-  color: #FFB907;
+  color: #ffb907;
   font-size: 25px;
   text-decoration: none;
+}
+
+.btnLink {
+  background-color: #28a745;
+}
+.EvLiIt-block {
+  margin: 20px 0;
+  display: block;
+  width: 650px;
+  border: 2px solid #608870;
 
 }
 
-.btnLink{
-  background-color:#28A745;
+.EvLiIt-title {
+  background-color: blueviolet;
+}
+.EvDash {
+  background-color: pink;
+}
+.EvDash2 {
+  background-color: peru;
+}
+.EvLiIt-date {
+  background-color: #3fa783;
+  height: 50px;
+}
+.EvLiIt-text {
+  background-color: #ecff5c;
+  height: 100px;
+}
+.EvLiIt-buttonrow {
+  background-color: #e2b7c1;
+  height: 50px;
+}
+.EvLiIt-button {
+  width: 100px;
+  background-color: #65ffa3;
+  height: 45px;
+  float: right;
 }
