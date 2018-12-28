@@ -61,3 +61,15 @@ body {
   height: 45px;
   float: right;
 }
+
+.RegForm{
+  display: block;
+  background-color: #fff;
+  margin: 20px 0;
+}
+.EvLiAtt-avatar{
+  width: 50px;
+  float: left;
+  margin-right:  15px;
+  border-radius: 15%;
+}

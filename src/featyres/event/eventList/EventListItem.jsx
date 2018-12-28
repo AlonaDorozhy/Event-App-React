@@ -1,31 +1,34 @@
 import React, { Component } from "react";
-
+import EventListAttendee from "./EventListAttendee";
 class EventListItem extends Component {
   render() {
-    return (
-      <div className="row">
+    const { event } = this.props;
+    return <div className="row">
         <div className="EvLiIt-block">
           <div className="EvLiIt-title">
-            <h3>Event Tittle</h3>
+            <img alt="hostPhoto" className="EvLiAtt-avatar" src={event.hostPhotoURL} />
+            <h3>{event.title}</h3>
             <h4>
-              hosted by <a href="/">Name</a>
+              hosted by <a href="/">{event.hostedBy}</a>
             </h4>
           </div>
           <div className="EvLiIt-date">
-            <span>Date | </span>
+            <span>Date | {event.date} </span>
             <span>time | </span>
-            <span> location |</span>
+            <span> location |{event.venue}</span>
           </div>
 
           <div className="EvLiIt-text">
-            <p> some text</p>
+            <p>{event.description}</p>
           </div>
           <div className="EvLiIt-buttonrow">
+            {event.attendees.map(attendee => (
+              <EventListAttendee key={attendee.id} attendee={attendee} />
+            ))}
             <button className="EvLiIt-button">View</button>
           </div>
         </div>
-      </div>
-    );
+      </div>;
   }
 }
 

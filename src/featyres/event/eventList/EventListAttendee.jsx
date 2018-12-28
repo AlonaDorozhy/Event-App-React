@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 
 class EventListAttendee extends Component {
     render() {
-        return <div>
-            <h1>Event List Attendee</h1>
-          </div>;
+        const { attendee } = this.props;
+        return (
+            <div>
+                <img alt='avatar' className='EvLiAtt-avatar'  src={attendee.photoURL} />
+            </div>
+        )
     }
 }
-
 export default EventListAttendee;
