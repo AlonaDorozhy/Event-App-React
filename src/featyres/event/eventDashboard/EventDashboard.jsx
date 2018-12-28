@@ -64,22 +64,24 @@ class EventDashboard extends Component {
     super(props);
     this.state = {
       events: eventsDashbord,
-      isOpen: false
+      isOpen: false,
+      selectedEvent: null
     };
     // this.handleFormOpen = this.handleFormOpen.bind(this);
     // this.handleFormClosed = this.handleFormClosed.bind(this);
   }
   handleFormOpen =()=> {
     this.setState({
+      selectedEvent: null,
       isOpen: true
     });
-  }
+  };
 
   handleFormClosed = () => {
     this.setState({
       isOpen: false
     });
-  }
+  };
 
   handleCreateEvent = (newEvent) =>{
     newEvent.id = cuid();
@@ -89,20 +91,29 @@ class EventDashboard extends Component {
       events: updatedEvents,
       isOpen: false,
     })
+  };
+
+  handleEditEvent =(eventToUpdate)=>()=>{
+    this.setState({
+      selectedEvent: eventToUpdate,
+      isOpen: true
+    });
   }
+
   render() {
+    const {selectedEvent} = this.state
     return (
       <div className="container">
         <div className="row">
           <div className="col-md-7 EvDash">
-            <EventList events={this.state.events} />
+            <EventList onEventEdit={this.handleEditEvent} events={this.state.events} />
           </div>
           <div className="col-md-5 EvDash2">
             <button onClick={this.handleFormOpen} isOpen="false">
               {" "}
               create event
             </button>
-            {this.state.isOpen && <EventForm createEvent={this.handleCreateEvent} handleFormClosed ={this.handleFormClosed} />}
+            {this.state.isOpen && <EventForm selectedEvent={selectedEvent} createEvent={this.handleCreateEvent} handleFormClosed ={this.handleFormClosed} />}
           </div>
         </div>
       </div>

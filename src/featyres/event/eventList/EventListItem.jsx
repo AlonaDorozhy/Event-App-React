@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import EventListAttendee from "./EventListAttendee";
 class EventListItem extends Component {
   render() {
-    const { event } = this.props;
+    const { event, onEventEdit } = this.props;
     return <div className="row">
         <div className="EvLiIt-block">
           <div className="EvLiIt-title">
@@ -25,7 +25,7 @@ class EventListItem extends Component {
             {event.attendee && event.attendees.map(attendee => (
               <EventListAttendee key={attendee.id} attendee={attendee} />
             ))}
-            <button className="EvLiIt-button">View</button>
+            <button onClick={onEventEdit(event)} className="EvLiIt-button">View</button>
           </div>
         </div>
       </div>;
