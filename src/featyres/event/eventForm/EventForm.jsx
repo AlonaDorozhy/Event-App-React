@@ -1,83 +1,71 @@
 import React, { Component } from "react";
 import "react-daypicker/lib/DayPicker.css";
 
-import Calendar from "react-calendar";
-// import Calendar from "react-input-calendar";
 class EventForm extends Component {
   state = {
-    date: new Date()
+    event: {
+      title: "",
+      date: "",
+      city: "",
+      venue: "",
+      hosted: ""
+    }
   };
-
-  onChange = date => this.setState({ date });
-
+  onFormSubmit = ev => {
+    ev.preventDefault();
+    console.log(this.state.event);
+  };
+  onInputChange = ev => {
+    const newEvent = this.state.event;
+    newEvent[ev.target.name] = ev.target.value;
+    this.setState({
+      event: newEvent
+    });
+  };
   render() {
     const { handleFormClosed } = this.props;
+    // const {event} =this.state;
     return (
       <div>
-        <form className="RegForm" action="">
+        <form onSubmit={this.onFormSubmit} className="RegForm" action="">
           <div class="container">
-            <label for="email">
-              <b>Event title</b>
-            </label>
+            <label>Event title</label>
             <br />
             <input
               type="text"
-              placeholder="Enter Email"
-              name="email"
+              value={this.state.event.title}
+              onChange={this.onInputChange}
+              placeholder="Title"
+              name="title"
               required
             />
             <br />
-
-            <label for="psw">
-              <b>Event day</b>
-            </label>
+            <label>Event day</label>
             <br />
-            <Calendar onChange={this.onChange} value={this.state.date} />
-
-            {/* <Calendar format='DD/MM/YYYY' date='4-12-2014' /> */}
-
-            <input
-              type="password"
-              placeholder="Enter Password"
-              name="psw"
-              required
-            />
+            <input type="date" value={this.state.event.date}
+              onChange={this.onInputChange} name="date" required />
             <br />
-
-            <label for="psw-repeat">
-              <b>City</b>
-            </label>
+            <label>City</label>
+            <br />
+            <input type="text" value={this.state.event.city}
+              onChange={this.onInputChange} placeholder="City" name="city" required />
+            <br />
+            <label>Venue</label>
+            <br />
+            <input type="text" value={this.state.event.venue}
+              onChange={this.onInputChange} placeholder="Venue" name="venue" required />
+            <br />
+            <label>Hosted by</label>
             <br />
             <input
-              type="password"
-              placeholder="Repeat Password"
-              name="psw-repeat"
-              required
-            />
-            <br />
-            <label for="psw-repeat">
-              <b>Venue</b>
-            </label>
-            <br />
-            <input
-              type="password"
-              placeholder="Repeat Password"
-              name="psw-repeat"
-              required
-            />
-            <br />
-            <label for="psw-repeat">
-              <b>Hosted by</b>
-            </label>
-            <br />
-            <input
-              type="password"
-              placeholder="Repeat Password"
-              name="psw-repeat"
+              type="text"
+              value={this.state.event.hosted}
+              onChange={this.onInputChange}
+              placeholder="Hosted by"
+              name="hosted"
               required
             />
             <hr />
-
             <p>
               By creating an account you agree to our{" "}
               <a href="/">Terms & Privacy</a>.
@@ -85,7 +73,11 @@ class EventForm extends Component {
             <button type="submit" class="registerbtn">
               Submit
             </button>
-            <button onClick={handleFormClosed} type="submit" class="registerbtn">
+            <button
+              onClick={handleFormClosed}
+              type="submit"
+              class="registerbtn"
+            >
               Cancel
             </button>
           </div>

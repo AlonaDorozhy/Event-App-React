@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Grid, Row, Col } from "react-bootstrap";
+import { Grid, Row, } from "react-bootstrap";
 import  NavBar from '../../featyres/navigation/navBar/navBar'
 import EventDashboard from '../../featyres/event/eventDashboard/EventDashboard'
 class App extends Component {

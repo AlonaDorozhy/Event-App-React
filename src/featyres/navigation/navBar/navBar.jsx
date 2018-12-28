@@ -4,7 +4,7 @@ class NavBar extends Component {
     return (
       <nav className="navbar navbar-expand-lg navbar-light NavHead ">
         <a className="navbarLogo" href="/">
-          <img src={require("../../../img/logo.png")} />
+          <img alt="logo" src={require("../../../img/logo.png")} />
         </a>
         <button
           className="navbar-toggler"

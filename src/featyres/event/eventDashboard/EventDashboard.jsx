@@ -6,15 +6,15 @@ import EventForm from "../eventForm/EventForm";
 const eventsDashbord = [
   {
     id: "1",
-    title: "Trip to Tower of London",
+    title: "New Year celebration",
     date: "2018-03-27T11:00:00+00:00",
     category: "culture",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin ligula eu leo tincidunt, quis scelerisque magna dapibus. Sed eget ipsum vel arcu vehicula ullamcorper.",
     city: "London, UK",
     venue: "Tower of London, St Katharine's & Wapping, London",
-    hostedBy: "Bob",
-    hostPhotoURL: "https://randomuser.me/api/portraits/men/20.jpg",
+    hostedBy: "Natali",
+    hostPhotoURL: "https://randomuser.me/api/portraits/women/27.jpg",
     attendees: [
       {
         id: "a",
@@ -37,8 +37,8 @@ const eventsDashbord = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin ligula eu leo tincidunt, quis scelerisque magna dapibus. Sed eget ipsum vel arcu vehicula ullamcorper.",
     city: "London, UK",
     venue: "Punch & Judy, Henrietta Street, London, UK",
-    hostedBy: "Tom",
-    hostPhotoURL: "https://randomuser.me/api/portraits/men/22.jpg",
+    hostedBy: "Taya",
+    hostPhotoURL: "https://randomuser.me/api/portraits/women/54.jpg",
     attendees: [
       {
         id: "b",
@@ -49,6 +49,11 @@ const eventsDashbord = [
         id: "a",
         name: "Bob",
         photoURL: "https://randomuser.me/api/portraits/men/20.jpg"
+      },
+      {
+        id: "c",
+        name: "Joe",
+        photoURL: "https://randomuser.me/api/portraits/men/37.jpg"
       }
     ]
   }
@@ -61,16 +66,16 @@ class EventDashboard extends Component {
       events: eventsDashbord,
       isOpen: false
     };
-    this.handleFormOpen = this.handleFormOpen.bind(this);
-    this.handleFormClosed = this.handleFormClosed.bind(this);
+    // this.handleFormOpen = this.handleFormOpen.bind(this);
+    // this.handleFormClosed = this.handleFormClosed.bind(this);
   }
-  handleFormOpen() {
+  handleFormOpen =()=> {
     this.setState({
       isOpen: true
     });
   }
 
-  handleFormClosed() {
+  handleFormClosed = () => {
     this.setState({
       isOpen: false
     });
