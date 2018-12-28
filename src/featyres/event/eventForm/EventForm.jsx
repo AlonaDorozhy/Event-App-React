@@ -13,7 +13,7 @@ class EventForm extends Component {
   };
   onFormSubmit = ev => {
     ev.preventDefault();
-    console.log(this.state.event);
+    this.props.createEvent(this.state.event);
   };
   onInputChange = ev => {
     const newEvent = this.state.event;
@@ -42,18 +42,35 @@ class EventForm extends Component {
             <br />
             <label>Event day</label>
             <br />
-            <input type="date" value={this.state.event.date}
-              onChange={this.onInputChange} name="date" required />
+            <input
+              type="date"
+              value={this.state.event.date}
+              onChange={this.onInputChange}
+              name="date"
+              required
+            />
             <br />
             <label>City</label>
             <br />
-            <input type="text" value={this.state.event.city}
-              onChange={this.onInputChange} placeholder="City" name="city" required />
+            <input
+              type="text"
+              value={this.state.event.city}
+              onChange={this.onInputChange}
+              placeholder="City"
+              name="city"
+              required
+            />
             <br />
             <label>Venue</label>
             <br />
-            <input type="text" value={this.state.event.venue}
-              onChange={this.onInputChange} placeholder="Venue" name="venue" required />
+            <input
+              type="text"
+              value={this.state.event.venue}
+              onChange={this.onInputChange}
+              placeholder="Venue"
+              name="venue"
+              required
+            />
             <br />
             <label>Hosted by</label>
             <br />

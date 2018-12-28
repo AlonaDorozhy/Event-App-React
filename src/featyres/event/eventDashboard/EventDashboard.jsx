@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import EventList from "../eventList/EventList";
-
+import cuid from 'cuid';
 import EventForm from "../eventForm/EventForm";
 
 const eventsDashbord = [
@@ -80,6 +80,16 @@ class EventDashboard extends Component {
       isOpen: false
     });
   }
+
+  handleCreateEvent = (newEvent) =>{
+    newEvent.id = cuid();
+    newEvent.hostPhotoURL = "/assets/user.png";
+    const updatedEvents = [...this.state.events, newEvent];
+    this.setState({
+      events: updatedEvents,
+      isOpen: false,
+    })
+  }
   render() {
     return (
       <div className="container">
@@ -92,7 +102,7 @@ class EventDashboard extends Component {
               {" "}
               create event
             </button>
-            {this.state.isOpen && <EventForm handleFormClosed ={this.handleFormClosed} />}
+            {this.state.isOpen && <EventForm createEvent={this.handleCreateEvent} handleFormClosed ={this.handleFormClosed} />}
           </div>
         </div>
       </div>

@@ -22,7 +22,7 @@ class EventListItem extends Component {
             <p>{event.description}</p>
           </div>
           <div className="EvLiIt-buttonrow">
-            {event.attendees.map(attendee => (
+            {event.attendee && event.attendees.map(attendee => (
               <EventListAttendee key={attendee.id} attendee={attendee} />
             ))}
             <button className="EvLiIt-button">View</button>
