@@ -92,13 +92,34 @@ class EventDashboard extends Component {
       isOpen: false,
     })
   };
+handkeUpdateEvent =(updatedEvents)=>{
+this.setState({
+  events: this.state.events.map(event =>{
+    if (event.id === updatedEvents.id){
+      return Object.assign({}, updatedEvents);
+    }
+    else{
+      return event
+    }
+  }),
+  isOpen: false,
+  selectedEvent: null
+})
+}
 
-  handleEditEvent =(eventToUpdate)=>()=>{
+  handleOpenEvent =(eventToOpen)=>()=>{
     this.setState({
-      selectedEvent: eventToUpdate,
+      selectedEvent: eventToOpen,
       isOpen: true
     });
   }
+handleDeleteEvent = (eventId)=>()=>{
+  const updateEvent = this.state.events.filter(e => e.id !== eventId);
+  this.setState({
+    events: updateEvent
+  })
+}
+
 
   render() {
     const {selectedEvent} = this.state
@@ -106,14 +127,14 @@ class EventDashboard extends Component {
       <div className="container">
         <div className="row">
           <div className="col-md-7 EvDash">
-            <EventList onEventEdit={this.handleEditEvent} events={this.state.events} />
+            <EventList deleteEvent = {this.handleDeleteEvent} onEventOpen={this.handleOpenEvent} events={this.state.events} />
           </div>
           <div className="col-md-5 EvDash2">
             <button onClick={this.handleFormOpen} isOpen="false">
               {" "}
               create event
             </button>
-            {this.state.isOpen && <EventForm selectedEvent={selectedEvent} createEvent={this.handleCreateEvent} handleFormClosed ={this.handleFormClosed} />}
+            {this.state.isOpen && <EventForm updateEvent ={this.handkeUpdateEvent} selectedEvent={selectedEvent} createEvent={this.handleCreateEvent} handleFormClosed ={this.handleFormClosed} />}
           </div>
         </div>
       </div>

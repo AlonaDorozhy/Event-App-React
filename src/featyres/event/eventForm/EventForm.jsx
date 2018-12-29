@@ -1,34 +1,40 @@
 import React, { Component } from "react";
 import "react-daypicker/lib/DayPicker.css";
 
-const emtyEvent ={
+const emtyEvent = {
   title: "",
   date: "",
   city: "",
   venue: "",
-  hostedBu: ""
-}
+  hostedBy: "",
+  hostPhotoURL:"",
+};
 
 class EventForm extends Component {
   state = {
     event: emtyEvent
-  };
+  }
 
-  componentDidMount(){
-    if(this.props.selectedEvent !== null){
+  componentDidMount() {
+    if (this.props.selectedEvent !== null) {
       this.setState({
         event: this.props.selectedEvent
-      })
+      });
     }
   }
-  componentWillReceiveProps(nextProps){
-if (nextProps.selectedEvent !== this.props.selectedEvent){
-  this.setState({ event: nextProps.selectedEvent || emtyEvent });
-}
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.selectedEvent !== this.props.selectedEvent) {
+      this.setState({ event: nextProps.selectedEvent || emtyEvent });
+    }
   }
   onFormSubmit = ev => {
     ev.preventDefault();
-    this.props.createEvent(this.state.event);
+    if (this.state.event.id) {
+      this.props.updateEvent(this.state.event);
+    } else {
+      this.props.createEvent(this.state.event);
+    }
+   
   };
   onInputChange = ev => {
     const newEvent = this.state.event;
@@ -94,7 +100,7 @@ if (nextProps.selectedEvent !== this.props.selectedEvent){
               value={this.state.event.hostedBy}
               onChange={this.onInputChange}
               placeholder="Hosted by"
-              name="hosted"
+              name="hostedBy"
               required
             />
             <hr />
