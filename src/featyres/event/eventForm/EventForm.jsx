@@ -1,16 +1,31 @@
 import React, { Component } from "react";
 import "react-daypicker/lib/DayPicker.css";
 
+const emtyEvent ={
+  title: "",
+  date: "",
+  city: "",
+  venue: "",
+  hostedBu: ""
+}
+
 class EventForm extends Component {
   state = {
-    event: {
-      title: "",
-      date: "",
-      city: "",
-      venue: "",
-      hosted: ""
-    }
+    event: emtyEvent
   };
+
+  componentDidMount(){
+    if(this.props.selectedEvent !== null){
+      this.setState({
+        event: this.props.selectedEvent
+      })
+    }
+  }
+  componentWillReceiveProps(nextProps){
+if (nextProps.selectedEvent !== this.props.selectedEvent){
+  this.setState({ event: nextProps.selectedEvent || emtyEvent });
+}
+  }
   onFormSubmit = ev => {
     ev.preventDefault();
     this.props.createEvent(this.state.event);
@@ -76,7 +91,7 @@ class EventForm extends Component {
             <br />
             <input
               type="text"
-              value={this.state.event.hosted}
+              value={this.state.event.hostedBy}
               onChange={this.onInputChange}
               placeholder="Hosted by"
               name="hosted"
