@@ -1,95 +1,47 @@
 import React, { Component } from "react";
+import { NavLink, Link } from "react-router-dom";
 class NavBar extends Component {
   render() {
-    return (
-      <nav className="navbar navbar-expand-lg navbar-light NavHead ">
-        <a className="navbarLogo" href="/">
-          <img alt="logo" src={require("../../../img/logo.png")} />
-        </a>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon" />
-        </button>
+    return <div className="col-md-12 ">
+        <nav className=" NavHead d-flex align-items-center ">
+          <div className=" col-md-3 ">
+            <a className="navbarLogo" href="/">
+              <img alt="logo" src={require("../../../img/logo.png")} />
+            </a>
+          </div>
 
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav mr-auto">
-            <li className="nav-item active">
-              <a className="navLink" href="/">
-                Home <span className="sr-only">(current)</span>
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="navLink" href="/">
-                Link
-              </a>
-            </li>
-            <li className="nav-item dropdown">
-              <a
-                className="navLink dropdown-toggle"
-                href="/"
-                id="navbarDropdown"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Dropdown
-              </a>
-              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a className="dropdown-item" href="/">
-                  Action
+          <div className=" col-md-6 nav-centr ">
+            <ul className="  ">
+              <li className="navbar-nav ">
+                <a as={Link} to="/" className="navLink" href="/">
+                  Home <span className="sr-only">(current)</span>
                 </a>
-                <a className="dropdown-item" href="/">
-                  Another action
+              </li>
+              <li className="navbar-nav ">
+                <a as={NavLink} to="/events" className="navLink" href="/events">
+                  Events
                 </a>
-                <div className="dropdown-divider" />
-                <a className="dropdown-item" href="/">
-                  Something else here
+              </li>
+              <li className="navbar-nav ">
+                <a as={NavLink} to="/people" className="navLink" href="/people">
+                  People
                 </a>
-              </div>
-            </li>
-            <li className="nav-item">
-              <a className="navLink disabled" href="/">
-                Disabled
-              </a>
-            </li>
-          </ul>
-          <form className="form-inline my-2 my-lg-0">
-            <button
-              className="btn navLink btnLink btn-outline-success my-2 my-sm-0"
-              type="submit"
-            >
-              Login
-            </button>
-            <button
-              className="btn navLink btnLink btn-outline-success my-2 my-sm-0"
-              type="submit"
-            >
-              Logout
-            </button>
-            <input
-              className="form-control navLink mr-sm-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button
-                        className="btn navLink btnLink btn-outline-success my-2 my-sm-0"
-              type="submit"
-            >
-              Search
-            </button>
-          </form>
-        </div>
-      </nav>
-    );
+              </li>
+              <Link to="/createEvent" className="btn navLink btnLink">
+                Create Event
+              </Link>
+            
+            </ul>
+          </div>
+
+          <button className="btn navLink btnLink " type="button">
+            Login
+          </button>
+          <button className="btn navLink btnLink " type="button">
+            Sign Out
+          </button>
+        </nav>
+      </div>;
   }
 }
 
