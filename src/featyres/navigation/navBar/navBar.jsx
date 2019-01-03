@@ -1,10 +1,28 @@
 import React, { Component } from "react";
 import { NavLink, Link } from "react-router-dom";
+import SignedOutMenu from "../menus/SignedOutMenu";
+import SignedInMenu from "../menus/SignedInMenu";
 class NavBar extends Component {
+  state = {
+    authenticated: false
+  };
+  handleSignIn = () => {
+    this.setState({
+      authenticated: true
+    });
+  };
+  handleSignOut = () => {
+    this.setState({
+      authenticated: false
+    });
+    this.props.history.push('/')
+  };
   render() {
-    return <div className="col-md-12 ">
+    const { authenticated } = this.state;
+    return (
+      <div className="col-md-12 ">
         <nav className=" NavHead d-flex align-items-center ">
-          <div className=" col-md-3 ">
+          <div className=" col-md-2 ">
             <a className="navbarLogo" href="/">
               <img alt="logo" src={require("../../../img/logo.png")} />
             </a>
@@ -30,18 +48,16 @@ class NavBar extends Component {
               <Link to="/createEvent" className="btn navLink btnLink">
                 Create Event
               </Link>
-            
             </ul>
           </div>
-
-          <button className="btn navLink btnLink " type="button">
-            Login
-          </button>
-          <button className="btn navLink btnLink " type="button">
-            Sign Out
-          </button>
+          {authenticated ? (
+            <SignedInMenu signOut={this.handleSignOut} />
+          ) : (
+            <SignedOutMenu signIn={this.handleSignIn} />
+          )}
         </nav>
-      </div>;
+      </div>
+    );
   }
 }
 
