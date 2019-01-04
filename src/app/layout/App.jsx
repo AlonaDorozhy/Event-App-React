@@ -8,27 +8,27 @@ import UserDetailedPage from "../../featyres/user/userDetailed/UserDetailedPage"
 import PeopleDashboard from "../../featyres/user/peopleDashboard/PeopleDashboard";
 import EventDetailedPage from "../../featyres/event/eventDetailed/EventDetailedPage";
 import HomePage from "../../featyres/home/HomePage";
+import Test from '../../featyres/testarea/TestComponent'
 class App extends Component {
   render() {
-    return (
-      <div className="container-fluid header">
+    return <div className="container-fluid header">
         <div className="row NavHead">
           <NavBar />
         </div>
-        <div className ='container'>
-        {/* <div className="row"> */}
+
+        <div className="row">
           <Switch>
             <Route exact path="/" component={HomePage} />
-            <Route path="/events" component={EventDashboard} />
+            <Route path="/test" component={Test} />
+          <Route path="/events" component={EventDashboard} />
             <Route path="/event/:id" component={EventDetailedPage} />
             <Route path="/people" component={PeopleDashboard} />
             <Route path="/profile/:id" component={UserDetailedPage} />
             <Route path="/settings" component={SettingsDashboard} />
             <Route path="/createEvent" component={EventForm} />
           </Switch>
-        {/* </div> */}
-      </div></div>
-    );
+        </div>
+      </div>;
   }
 }
 

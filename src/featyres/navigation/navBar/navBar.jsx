@@ -45,6 +45,12 @@ class NavBar extends Component {
                   People
                 </a>
               </li>
+              <li className="navbar-nav ">
+                <a as={NavLink} to="/test" className="navLink" href="/test">
+                 Test
+                </a>
+              </li>
+           
               <Link to="/createEvent" className="btn navLink btnLink">
                 Create Event
               </Link>

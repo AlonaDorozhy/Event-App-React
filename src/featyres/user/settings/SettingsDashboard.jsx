@@ -8,6 +8,7 @@ import AccountPage from "./AccountPage";
 import BasicPage from "./BasicPage";
 const SettingsDashboard = () => {
   return( 
+    <div className ='container'>
   <div className="row">
       {" "}
       
@@ -21,7 +22,7 @@ const SettingsDashboard = () => {
       </Switch>
       </div>
       <SettingsNav />
-    </div>);
+    </div></div>);
 };
 
 export default SettingsDashboard;
