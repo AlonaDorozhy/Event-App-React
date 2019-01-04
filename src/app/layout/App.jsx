@@ -15,7 +15,8 @@ class App extends Component {
         <div className="row NavHead">
           <NavBar />
         </div>
-        <div className="row">
+        <div className ='container'>
+        {/* <div className="row"> */}
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route path="/events" component={EventDashboard} />
@@ -25,8 +26,8 @@ class App extends Component {
             <Route path="/settings" component={SettingsDashboard} />
             <Route path="/createEvent" component={EventForm} />
           </Switch>
-        </div>
-      </div>
+        {/* </div> */}
+      </div></div>
     );
   }
 }

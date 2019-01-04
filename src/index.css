@@ -5,17 +5,18 @@ body {
 }
 .HomePage {
   background: url(img/event.png) #b6d7ff;
+
   height: 900px;
   text-align: center;
   font-size: 55px;
 }
 .TextHomePage {
-  font-size: 55px;
+  font-size: 65px;
   font-weight: bold;
   /* color:#1A6B2D; */
-  margin-top: 200px;
-  -webkit-text-stroke: 3px #28a745;
-  -webkit-text-fill-color: #ffa81c;
+  margin-top: 140px;
+  -webkit-text-stroke: 3px #11491e;
+  -webkit-text-fill-color: #ffffff;
 }
 .navbar-nav {
   display: inline;
@@ -112,7 +113,30 @@ body {
   border-radius: 15%;
 }
 
-.UNUser{
+.UNUser {
   width: 40px;
   border-radius: 35%;
+}
+.Settings_block {
+  display: block;
+  border-top: 2px solid #c25d0b;
+  border-bottom: 2px solid #c25d0b#c25d0b;
+  margin: 10px;
+  font-size: 20px;
+}
+.Settings_head {
+  background-color: #b6d7ff;
+  border-bottom: 2px solid #c25d0b;
+  color: #28a745;
+  font-weight: bold;
+  padding: 10px;
+}
+.Settings_all {
+  color: #c25d0b;
+  padding: 10px;
+  background: linear-gradient(
+    to bottom,
+    rgba(209, 230, 255, 1) 0%,
+    rgba(125, 185, 232, 0) 100%
+  );
 }

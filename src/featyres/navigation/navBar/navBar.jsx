@@ -50,11 +50,12 @@ class NavBar extends Component {
               </Link>
             </ul>
           </div>
+          <div >
           {authenticated ? (
             <SignedInMenu signOut={this.handleSignOut} />
           ) : (
             <SignedOutMenu signIn={this.handleSignIn} />
-          )}
+          )}</div>
         </nav>
       </div>
     );

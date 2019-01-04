@@ -1,6 +1,6 @@
 import React from "react";
 import UNUser from '../../../img/user.png'
-
+import {Link} from 'react-router-dom'
 // import { Link } from "react-router-dom";
 
 const SignedInMenu = ({ signOut }) => {
@@ -21,7 +21,7 @@ const SignedInMenu = ({ signOut }) => {
         <a className="dropdown-item" href="/">
           My Profile
         </a>
-        <a className="dropdown-item" href="/">
+        <a as={Link} to ='/settings' className="dropdown-item" href="/settings">
           Settings
         </a>
         
