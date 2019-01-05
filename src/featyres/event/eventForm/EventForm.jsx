@@ -104,10 +104,7 @@ class EventForm extends Component {
               required
             />
             <hr />
-            <p>
-              By creating an account you agree to our{" "}
-              <a href="/">Terms & Privacy</a>.
-            </p>
+           
             <button type="submit" class="registerbtn">
               Submit
             </button>
