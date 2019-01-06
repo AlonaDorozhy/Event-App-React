@@ -20,8 +20,8 @@ class NavBar extends Component {
   render() {
     const { authenticated } = this.state;
     return (
-      <div className="col-md-12 ">
-        <nav className=" NavHead d-flex align-items-center ">
+      <div className="col-md-12 NavHead">
+        <nav className="  d-flex align-items-center ">
           <div className=" col-md-2 ">
             <a className="navbarLogo" href="/">
               <img alt="logo" src={require("../../../img/logo3.png")} />

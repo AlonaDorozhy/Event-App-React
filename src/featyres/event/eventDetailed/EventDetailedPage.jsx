@@ -24,7 +24,7 @@ const EventDetailedPage = ({event}) => {
   return (
   <div className='container'>
   <div className='row'>
-      <div className="col-8">
+      <div className="EvDet-main col-8">
           <EventDetailedHeader  event={event} />
         <EventDetailedInfo event={event} />
         <EventDetailedChat />

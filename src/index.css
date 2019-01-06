@@ -25,7 +25,7 @@ body {
 }
 
 .NavHead {
-  background: linear-gradient(309deg, rgba(201,219,191,0.1) 0%, rgba(201,219,191,0.97) 97%, rgba(174,196,163,1) 100%);
+  background: linear-gradient(325deg, rgba(60,117,78,0.05) 0%, rgba(64,120,82,0.05) 26%, rgba(74,128,92,0.7) 77%, rgba(74,128,92,1) 100%); 
   /* background-o */
   /* opacity: 0.3; */
   color: #28a745;
@@ -127,20 +127,16 @@ body {
   font-size: 20px;
 }
 .Settings_head {
-  background-color: #b6d7ff;
+  background-color: #5D7A4D;
   border-bottom: 2px solid #c25d0b;
   color: #28a745;
   font-weight: bold;
   padding: 10px;
 }
 .Settings_all {
-  color: #c25d0b;
+  color: #e7dcd3;
   padding: 10px;
-  background: linear-gradient(
-    to bottom,
-    rgba(209, 230, 255, 1) 0%,
-    rgba(125, 185, 232, 0) 100%
-  );
+  background: linear-gradient(to bottom, rgba(54,81,17,0.65) 0%,rgba(52,78,14,0.65) 15%,rgba(44,63,4,0) 77%,rgba(41,58,0,0) 100%);
 }
 .Avatar{
  width: 50px;
@@ -152,7 +148,7 @@ body {
 .EvDet-Header {
   margin-top: 25px;
   /* display: block; */
-  background: linear-gradient(309deg, rgba(201,219,191,0.1) 0%, rgba(201,219,191,0.97) 97%, rgba(174,196,163,1) 100%);
+  /* background:linear-gradient(to bottom, rgba(54,81,17,0.65) 0%,rgba(52,78,14,0.65) 15%,rgba(44,63,4,0) 77%,rgba(41,58,0,0) 100%); */
   border-bottom: 1px solid #545556;
 }
 .EvDet-Header-img {
@@ -168,4 +164,9 @@ body {
 .EvDet-title-small{
   font-size: 20px;
   float: left;
+}
+.EvDet-main{
+  margin-top: 40px;
+  background: linear-gradient(297deg, rgba(60,117,78,0.05) 0%, rgba(74,128,92,1) 100%); 
+  /* background: linear-gradient(135deg, rgba(54,81,17,0.65) 0%,rgba(52,78,14,0.65) 15%,rgba(44,63,4,0) 77%,rgba(41,58,0,0) 100%); */
 }

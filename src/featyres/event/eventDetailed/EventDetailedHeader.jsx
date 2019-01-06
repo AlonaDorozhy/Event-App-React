@@ -1,27 +1,29 @@
 import React from "react";
-
-
-
-
 import { Link } from "react-router-dom";
 const eventImageStyle = {
-    filter: 'brightness(30%)'
+  filter: "brightness(30%)"
 };
 
 const eventImageTextStyle = {
-    position: 'absolute',
-    bottom: '80%',
-    left: '5%',
-    width: '100%',
-    height: 'auto',
-    color: 'white'
+  position: "absolute",
+  bottom: "80%",
+  left: "5%",
+  width: "100%",
+  height: "auto",
+  color: "white"
 };
 
 const EventDetailedHeader = ({ event }) => {
-  return <div className=" EvDet-Header">
+  return (
+    <div className=" EvDet-Header">
       <div>
-      <img style={eventImageStyle} className="EvDet-Header-img" src={require(`../../../img/categoryImages/${event.category}.jpg`)} alt="eventPoster" />
-        
+        <img
+          style={eventImageStyle}
+          className="EvDet-Header-img"
+          src={require(`../../../img/categoryImages/${event.category}.jpg`)}
+          alt="eventPoster"
+        />
+
         <div style={eventImageTextStyle} className="EvDet-inform">
           <div className="EvDet-title">
             <p>{event.title}</p>
@@ -40,7 +42,8 @@ const EventDetailedHeader = ({ event }) => {
           <button as={Link}>Manage Event</button>
         </Link>
       </div>
-    </div>;
+    </div>
+  );
 };
 
 export default EventDetailedHeader;

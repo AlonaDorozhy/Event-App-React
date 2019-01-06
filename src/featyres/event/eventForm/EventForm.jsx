@@ -1,48 +1,75 @@
 import React, { Component } from "react";
 import "react-daypicker/lib/DayPicker.css";
+import cuid from "cuid";
+import { connect } from "react-redux";
 
-const emtyEvent = {
-  title: "",
-  date: "",
-  city: "",
-  venue: "",
-  hostedBy: "",
-  hostPhotoURL:"",
+import { createEvent, updateEvent } from "../eventActions";
+
+
+const mapState = (state, ownProps) => {
+  const eventId = ownProps.match.params.id;
+
+  let event = {
+    title: "",
+    date: "",
+    city: "",
+    venue: "",
+    hostedBy: ""
+  };
+
+  if (eventId && state.events.length > 0) {
+    event = state.events.filter(event => event.id === eventId)[0];
+  }
+
+  return {
+    event
+  };
+};
+
+const actions = {
+  createEvent,
+  updateEvent
 };
 
 class EventForm extends Component {
   state = {
-    event: emtyEvent
-  }
+    event: Object.assign({}, this.props.event)
+  };
 
-  componentDidMount() {
-    if (this.props.selectedEvent !== null) {
-      this.setState({
-        event: this.props.selectedEvent
-      });
-    }
-  }
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.selectedEvent !== this.props.selectedEvent) {
-      this.setState({ event: nextProps.selectedEvent || emtyEvent });
-    }
-  }
+  // componentDidMount() {
+  //   if (this.props.selectedEvent !== null) {
+  //     this.setState({
+  //       event: this.props.selectedEvent
+  //     });
+  //   }
+  // }
+  // componentWillReceiveProps(nextProps) {
+  //   if (nextProps.selectedEvent !== this.props.selectedEvent) {
+  //     this.setState({ event: nextProps.selectedEvent || emtyEvent });
+  //   }
+  // }
   onFormSubmit = ev => {
     ev.preventDefault();
     if (this.state.event.id) {
       this.props.updateEvent(this.state.event);
+      this.props.history.goBack();
     } else {
-      this.props.createEvent(this.state.event);
+      const newEvent = {
+        ...this.state.event,
+        id: cuid(),
+        hostPhotoURL: '/assets/user.png'
     }
-   
+      this.props.createEvent(newEvent)
+      this.props.history.push('/events')
   };
+}
   onInputChange = ev => {
     const newEvent = this.state.event;
     newEvent[ev.target.name] = ev.target.value;
     this.setState({
       event: newEvent
-    });
-  };
+    })
+  }
   render() {
     const { handleFormClosed } = this.props;
     // const {event} =this.state;
@@ -104,12 +131,12 @@ class EventForm extends Component {
               required
             />
             <hr />
-           
+
             <button type="submit" class="registerbtn">
               Submit
             </button>
             <button
-              onClick={handleFormClosed}
+             onClick= {this.props.history.goBack} 
               type="submit"
               class="registerbtn"
             >
@@ -122,4 +149,4 @@ class EventForm extends Component {
   }
 }
 
-export default EventForm;
+export default connect(mapState, actions)(EventForm);
