@@ -2,9 +2,10 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  /* background: url(img/smoke.png)  rgb(203, 211, 228); */
 }
 .HomePage {
-  background: url(img/event.png) #b6d7ff;
+  background: url(img/event.png) ;
   height: 900px;
   text-align: center;
   font-size: 55px;
@@ -24,7 +25,9 @@ body {
 }
 
 .NavHead {
-  background: url(img/confetti.png) #b6d7ff;
+  background: linear-gradient(309deg, rgba(201,219,191,0.1) 0%, rgba(201,219,191,0.97) 97%, rgba(174,196,163,1) 100%);
+  /* background-o */
+  /* opacity: 0.3; */
   color: #28a745;
   height: 130px;
 }
@@ -138,4 +141,31 @@ body {
     rgba(209, 230, 255, 1) 0%,
     rgba(125, 185, 232, 0) 100%
   );
+}
+.Avatar{
+ width: 50px;
+  float: left;
+  margin-right: 15px;
+  border-radius: 15%;
+  /* height: 50px; */
+}
+.EvDet-Header {
+  margin-top: 25px;
+  /* display: block; */
+  background: linear-gradient(309deg, rgba(201,219,191,0.1) 0%, rgba(201,219,191,0.97) 97%, rgba(174,196,163,1) 100%);
+  border-bottom: 1px solid #545556;
+}
+.EvDet-Header-img {
+  width: 100%;
+}
+.EvDet-inform{
+  font-size: 27px;
+  font-weight: 700;
+  margin: 0;
+  padding-left: 20px;
+
+}
+.EvDet-title-small{
+  font-size: 20px;
+  float: left;
 }

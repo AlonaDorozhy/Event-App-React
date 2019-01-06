@@ -24,7 +24,7 @@ class NavBar extends Component {
         <nav className=" NavHead d-flex align-items-center ">
           <div className=" col-md-2 ">
             <a className="navbarLogo" href="/">
-              <img alt="logo" src={require("../../../img/logo.png")} />
+              <img alt="logo" src={require("../../../img/logo3.png")} />
             </a>
           </div>
 

@@ -6,7 +6,7 @@ const initialState = [
     id: "1",
     title: "New Year celebration",
     date: "2018-03-27",
-    category: "culture",
+    category: "other",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin ligula eu leo tincidunt, quis scelerisque magna dapibus. Sed eget ipsum vel arcu vehicula ullamcorper.",
     city: "London, UK",

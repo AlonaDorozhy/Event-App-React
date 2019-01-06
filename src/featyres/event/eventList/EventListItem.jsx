@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import EventListAttendee from "./EventListAttendee";
+ import {Link} from 'react-router-dom';
+
+
 class EventListItem extends Component {
   render() {
     const { event, onEventOpen, deleteEvent } = this.props;
@@ -35,9 +38,9 @@ class EventListItem extends Component {
             <button onClick={deleteEvent(event.id)} className="EvLiIt-button">
               Delete
             </button>
-            <button onClick={onEventOpen(event)} className="EvLiIt-button">
-              View
-            </button>
+            <Link as={Link} to={`/event/${event.id}`}  >
+              <button className="EvLiIt-button"> view</button>
+            </Link>
           </div>
         </div>
       </div>
