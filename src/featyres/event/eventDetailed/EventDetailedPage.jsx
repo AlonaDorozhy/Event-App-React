@@ -29,7 +29,7 @@ const EventDetailedPage = ({event}) => {
         <EventDetailedInfo event={event} />
         <EventDetailedChat />
       </div> 
-      <div className="col-4">
+      <div className="offset-1 col-3">
         <EventDetailedSidebar attendees={event.attendees}  />
       </div></div>
   </div>);

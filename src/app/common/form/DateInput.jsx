@@ -6,7 +6,6 @@ import moment from "moment";
 
 const DateInput = ({
   input: { value, onChange, ...restInput },
- 
   placeholder,
   meta: { touched, error },
   ...rest

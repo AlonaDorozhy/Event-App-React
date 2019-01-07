@@ -12,11 +12,13 @@ const EventDetailedSidebar = ({ attendees }) => {
       <div className=" other">
         {attendees && attendees.map(attendee => (
           <div className='row'>
-            <div className="col-3" key={attendee.id} style={{ position: "relative" }}>
+            <div  key={attendee.id} style={{ position: "relative" }}>
               {isHost && <div>Host</div>}
               <img
-                className="EvLiAtt-avatar"
+
                 src={attendee.photoURL}
+                className="EvLiAtt-avatar"
+                // src={attendee.photoURL}
                 alt="photoURL"
               />
               <div clacName="Content">

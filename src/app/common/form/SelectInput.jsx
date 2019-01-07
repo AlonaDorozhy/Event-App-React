@@ -1,10 +1,25 @@
 import React from "react";
 import Select from "react-select";
 
-const SelectInput = ({ options }) => {
+const SelectInput = ({
+  input,
+  type,
+  value,
+  placeholder,
+  multiple,
+  options,
+
+  meta: { touched, error }
+}) => {
   return (
-    <div>
-      <Select className="EvForm-field" options={options} />
+    <div error={touched && !!error}>
+      <Select
+        placeholder={placeholder}
+        onChange={(e, data) => input.onChange(data.value)}
+        className="EvForm-field"
+        options={options}
+      />
+      {touched && error && <label basic color='red'>{error}</label>}
     </div>
   );
 };
